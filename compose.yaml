@@ -1,0 +1,29 @@
+services:
+  backend:
+    depends_on:
+      - db
+    build: ./backend
+    ports:
+      - 3000:3000
+    environment:
+      - MONGO_URI=mongodb://db:27017/NumerDB
+      - PORT=3000
+      - HOST=http://localhost:5173
+  
+  frontend:
+    depends_on:
+      - backend
+    build: ./frontend
+    ports:
+      - 5173:5173
+    
+  db:
+    image: mongodb:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+      
+volumes:
+  mongo-data:
+      

@@ -4,8 +4,8 @@
   "description": "Backend API for Numerical Methods application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "concurrently \"nodemon server.js\" \"node seed.js\""
+    "start": "concurrently \"server.js\" \"node seed.js\"",
+    "dev": "nodemon server.js"
    },
   "keywords": ["numerical", "methods", "api", "express", "mongodb"],
   "author": "",
