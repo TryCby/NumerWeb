@@ -7,7 +7,7 @@ import MatrixSizeSelector from '../component/MatrixSizeSelector';
 import MatrixInputLatex from '../component/MatrixInputLatex';
 import ActionButtons from '../component/ActionButtons';
 import SolutionDisplay from '../component/SolutionDisplay';
-import { mathJaxConfig, fmtDet, fmtSolution, createHandlers } from '../component/latexHelpers';
+import { mathJaxConfig, fmtDet, fmtSolution, createHandlers } from '../component/LatexHelpers';
 
 function CramerRuleUI() {
     const [size, setSize] = useState(3);

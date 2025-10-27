@@ -6,7 +6,7 @@ import MatrixSizeSelector from '../component/MatrixSizeSelector';
 import MatrixInputLatex from '../component/MatrixInputLatex';
 import ActionButtons from '../component/ActionButtons';
 import SolutionDisplay from '../component/SolutionDisplay';
-import { mathJaxConfig, fmtMatrix, fmtVector, fmtSolution, createHandlers } from '../component/latexHelpers';
+import { mathJaxConfig, fmtMatrix, fmtVector, fmtSolution, createHandlers } from '../component/LatexHelpers';
 
 function LU_DecompositionUI() {
     const [size, setSize] = useState(3);

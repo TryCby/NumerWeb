@@ -7,7 +7,7 @@ import MatrixSizeSelector from '../component/MatrixSizeSelector';
 import MatrixInputLatex from '../component/MatrixInputLatex';
 import ActionButtons from '../component/ActionButtons';
 import SolutionDisplay from '../component/SolutionDisplay';
-import { mathJaxConfig, fmtAugmented, fmtSolution, createHandlers } from '../component/latexHelpers';
+import { mathJaxConfig, fmtAugmented, fmtSolution, createHandlers } from '../component/LatexHelpers';
 
 function GaussEliminationUI() {
     const [size, setSize] = useState(3);
