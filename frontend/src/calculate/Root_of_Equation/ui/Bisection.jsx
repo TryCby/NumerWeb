@@ -32,12 +32,31 @@ function BisectionUI() {
         }
     };
 
+    const handleExample = () => {
+        let exampleId = Math.floor(Math.random() * 4) + 1;
+        axios.get(`http://localhost:3000/api/numerical/${exampleId}`)
+            .then(response => {
+                const data = response.data.data;
+                setInputs({
+                    fx: data.fx,
+                    xl: data.xl,
+                    xr: data.xr,
+                    error: data.error
+                });
+                setResult(null);
+            })
+            .catch(error => {
+                alert('Error fetching example data: ' + error.message);
+            });
+    }
+
     return (
         <div>
             <Inputs
                 inputs={inputs}
                 onChange={handleInputChange}
                 onCalculate={handleCalculate}
+                onExample={handleExample}
                 methodType="bracket"
             />
             {result && (

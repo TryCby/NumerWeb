@@ -1,4 +1,4 @@
-function Inputs({ inputs, onChange, onCalculate, methodType }) {
+function Inputs({ inputs, onChange, onCalculate, methodType, onExample }) {
     const styles = {
         container: {
             padding: '20px',
@@ -30,7 +30,7 @@ function Inputs({ inputs, onChange, onCalculate, methodType }) {
             fontSize: '16px',
             fontWeight: 'bold',
             cursor: 'pointer',
-        }
+        },
     };
 
     // Validation แบบง่าย
@@ -68,6 +68,10 @@ function Inputs({ inputs, onChange, onCalculate, methodType }) {
 
     const handleCalculate = () => {
         if (validate()) onCalculate();
+    };
+
+    const handleExample = () => {
+        onExample();
     };
 
     // Component สำหรับ Input Field
@@ -120,6 +124,19 @@ function Inputs({ inputs, onChange, onCalculate, methodType }) {
                 onMouseOut={(e) => e.target.style.backgroundColor = '#000dff'}
             >
                 Calculate
+            </button>
+
+            <button
+                onClick={handleExample}
+                style={{ 
+                    ...styles.button, 
+                    marginTop: '10px', 
+                    backgroundColor: '#28a745' 
+                }}
+                onMouseOver={(e) => e.target.style.backgroundColor = '#218838'}
+                onMouseOut={(e) => e.target.style.backgroundColor = '#28a745'}
+            >
+                Load Example
             </button>
         </div>
     );
